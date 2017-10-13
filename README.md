@@ -2,10 +2,10 @@
 A collection of scripts and thing that I have written.   
 Nothing to see here; move along.
 
-### kageutils.py
+## kageutils.py
 A few very short methods that might be useful in other python projects. Feel free to import or just copy-paste them.
 
-### screenshotter.py
+## screenshotter.py
 Takes screenshots of all specified input files and stores them in './<filename>/<frame_number>.png'.  
 Probably useful for encoders to compare source and encode or different versions of the same video.
 #### Usage
