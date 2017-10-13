@@ -1,6 +1,3 @@
-# Takes screenshots of all input files and stores them in ./<filename>/
-# proper documentation later :lul:
-
 from argparse import ArgumentParser
 import vapoursynth as vs
 from random import choice, choices
@@ -16,7 +13,7 @@ parser.add_argument('--frames', '-f', dest='frames', type=int, nargs='+',
                     help='List of frames (space-separated), optional')
 parser.add_argument('--num-frames', '-n', dest='num_frames', type=int, nargs='?',
                     help='Number of screenshots to take, default=10')
-parser.add_argument('--offsets', '-o', dest='offsets', type=str, nargs='?',
+parser.add_argument('--offsets', '-o', dest='offsets', type=int, nargs='+',
                     help='List of offsets for all clips in frames (space-separated). Order must match order of the clips, optional')
 
 args = parser.parse_args()
