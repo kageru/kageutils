@@ -1,3 +1,5 @@
+#!/bin/python3
+
 from argparse import ArgumentParser
 import vapoursynth as vs
 from random import choice, choices
