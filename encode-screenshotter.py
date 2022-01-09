@@ -10,7 +10,7 @@ core = vs.core
 
 
 parser = ArgumentParser('Take screenshots of the same frame in different video files.')
-parser.add_argument('clips', metavar='clips', type=str, nargs='+', help='Paths to all video files', required=True)
+parser.add_argument('clips', metavar='clips', type=str, nargs='+', help='Paths to all video files')
 parser.add_argument('--frames', '-f', dest='frames', type=int, nargs='+',
                     help='List of frames (space-separated), optional')
 parser.add_argument('--num-frames', '-n', dest='num_frames', type=int, nargs='?',
@@ -54,9 +54,9 @@ if __name__ == '__main__':
         imwri = core.imwrif
     else:
         raise AttributeError('Either imwri or imwrif must be installed.')
-    for file, offs in clip_paths, offsets:
+    for file, offs in zip(clip_paths, offsets):
         name = re.split(r'[\\/]', file)[-1].rsplit('.', 1)[0]
-        os.mkdir(os.path.join(os.getcwd(), name))
+        os.makedirs(os.path.join(os.getcwd(), name), exist_ok=True)
         clip = open_clip(file)
         savepath = os.path.join(os.getcwd(), name)
         clip = imwri.Write(clip, 'png', os.path.join(savepath, '%d.png'))
